@@ -1,27 +1,24 @@
-# 🐍 PyImporter – Python Dependency Helper
+# 🐍 PyImporter
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
+**PyImporter** is a lightweight web tool designed to help Python developers manage their library imports. It instantly checks if a module is part of the **Python Standard Library** or if it needs to be installed via `pip`.
 
-**PyImporter** to proste narzędzie webowe stworzone dla programistów Pythona. Pozwala szybko sprawdzić, czy biblioteka, której chcesz użyć (np. `math`, `pandas`, `os`), jest już wbudowana w standardową instalację Pythona, czy wymaga doinstalowania przez `pip`.
+## 🚀 Key Features
 
-## 🚀 Główne Funkcje
+*   **Import Analysis:** Type in any module name (e.g., `os`, `requests`, `pandas`) to check its status.
+*   **One-Click Installer:** If a library is missing, the app generates a downloadable `.bat` file.
+*   **Instant Setup:** Run the `.bat` file to automatically execute `pip install` for the required packages.
+*   **No Backend Needed:** Works entirely in the browser using Vanilla JavaScript.
 
-*   **Analiza Modułów:** Błyskawiczne sprawdzenie statusu importu.
-*   **Generator .bat:** Jeśli biblioteki brakuje, aplikacja generuje skrypt wsadowy `.bat`, który za jednym kliknięciem zainstaluje odpowiednie pakiety.
-*   **Bezpieczeństwo:** Cała analiza odbywa się lokalnie w Twojej przeglądarce.
+## 🛠️ Tech Stack
 
-## 🛠️ Technologie
+- **HTML5** – Application structure.
+- **CSS3** – Modern, responsive styling.
+- **JavaScript (ES6+)** – Logic for library database and `.bat` file generation.
 
-Projekt został zbudowany bez użycia ciężkich frameworków (Vanilla Tech Stack):
-*   **HTML5**
-*   **CSS3** (Modern UI)
-*   **JavaScript** (ES6+)
+## 📥 Installation & Usage
 
-## 📥 Instalacja i Uruchomienie
+To use this tool locally, follow these steps:
 
-Aby zacząć korzystać z projektu lokalnie, wykonaj poniższe kroki:
-
-1. **Sklonuj repozytorium:**
+1. **Clone the repository:**
    ```bash
    git clone [https://github.com/Mikus3130/PyImporter.git](https://github.com/Mikus3130/PyImporter.git)
