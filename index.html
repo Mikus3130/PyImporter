@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyImport — Generator setup.bat dla Pythona</title>
+  <meta name="description"
+    content="Wklej swoje importy z Pythona, a PyImport sprawdzi które pakiety musisz zainstalować i wygeneruje gotowy plik setup.bat." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">🐍</span>
+        <span class="logo-text">Py<span class="accent">Import</span></span>
+      </div>
+      <div class="header-badge">v1.0</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero-title">
+      Twoje importy.<br />
+      <span class="gradient-text">Jeden klik.</span>
+    </h1>
+    <p class="hero-subtitle">
+      Wklej importy z kodu Pythona — PyImport sprawdzi które pakiety<br class="hide-sm" />
+      trzeba zainstalować i wygeneruje gotowy plik <code>setup.bat</code>.
+    </p>
+
+    <div class="steps">
+      <div class="step"><span class="step-num">1</span> Wklej importy</div>
+      <div class="step-arrow">→</div>
+      <div class="step"><span class="step-num">2</span> Analiza pakietów</div>
+      <div class="step-arrow">→</div>
+      <div class="step"><span class="step-num">3</span> Pobierz setup.bat</div>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="card" id="input-card">
+      <div class="card-header">
+        <div class="card-title">
+          <span class="card-icon">📋</span>
+          Wklej importy z Pythona
+        </div>
+        <button class="btn-ghost" id="btn-example" title="Załaduj przykład">Przykład</button>
+      </div>
+
+      <div class="editor-wrapper">
+        <div class="editor-lines" id="editor-lines">1</div>
+        <textarea id="import-input" class="editor-textarea" spellcheck="false"
+          placeholder="import os&#10;import requests&#10;from flask import Flask&#10;import numpy as np&#10;from PIL import Image&#10;import json&#10;import pandas as pd"></textarea>
+      </div>
+
+      <div class="card-footer">
+        <button class="btn-analyze" id="btn-analyze">
+          <span class="btn-icon">🔍</span>
+          Analizuj importy
+        </button>
+        <button class="btn-clear" id="btn-clear">Wyczyść</button>
+      </div>
+    </div>
+    <div id="results-section" class="results-section hidden">
+      <div class="summary-grid">
+        <div class="summary-card to-install">
+          <div class="summary-num" id="count-install">0</div>
+          <div class="summary-label">Do zainstalowania</div>
+        </div>
+        <div class="summary-card built-in">
+          <div class="summary-num" id="count-builtin">0</div>
+          <div class="summary-label">Wbudowane w Pythona</div>
+        </div>
+        <div class="summary-card total">
+          <div class="summary-num" id="count-total">0</div>
+          <div class="summary-label">Łącznie importów</div>
+        </div>
+      </div>
+      <div class="card" id="packages-card">
+        <div class="card-header">
+          <div class="card-title">
+            <span class="card-icon">📦</span>
+            Wyniki analizy
+          </div>
+          <div class="filter-tabs">
+            <button class="filter-tab active" data-filter="all">Wszystkie</button>
+            <button class="filter-tab" data-filter="install">Do instalacji</button>
+            <button class="filter-tab" data-filter="builtin">Wbudowane</button>
+          </div>
+        </div>
+
+        <div class="packages-list" id="packages-list"></div>
+      </div>
+      <div class="card download-card" id="download-card">
+        <div class="download-inner">
+          <div class="download-info">
+            <div class="download-title">
+              <span>🚀</span> Gotowy plik <code>setup.bat</code>
+            </div>
+            <p class="download-desc" id="download-desc">
+              Plik zainstaluje wszystkie wymagane pakiety jednym kliknięciem.
+            </p>
+          </div>
+
+          <div class="download-preview">
+            <div class="preview-header">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="preview-title">setup.bat</span>
+            </div>
+            <pre class="preview-code" id="preview-code"></pre>
+          </div>
+
+          <button class="btn-download" id="btn-download">
+            <span>⬇️</span> Pobierz setup.bat
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Zbudowany z ❤️ dla programistów Python · <span class="accent">PyImport</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
